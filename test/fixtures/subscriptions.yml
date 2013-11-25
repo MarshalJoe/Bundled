@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  fee: 1
+  monthly: false
+  annually: false
+
+two:
+  name: MyString
+  fee: 1
+  monthly: false
+  annually: false
