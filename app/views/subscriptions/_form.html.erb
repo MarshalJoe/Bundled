@@ -11,23 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="large-6 large-offset-1 columns">
+    <br>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :fee %><br>
+      <%= f.number_field :fee %>
+    </div>
+
+    <p>Date: <input type="text" id="datepicker"></p>
+
+    <div class="field">
+      <%= f.label :monthly %><br>
+      <%= f.check_box :monthly %>
+    </div>
+    <div class="field">
+      <%= f.label :annually %><br>
+      <%= f.check_box :annually %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :fee %><br>
-    <%= f.number_field :fee %>
-  </div>
-  <div class="field">
-    <%= f.label :monthly %><br>
-    <%= f.check_box :monthly %>
-  </div>
-  <div class="field">
-    <%= f.label :annually %><br>
-    <%= f.check_box :annually %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

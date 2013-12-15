@@ -9,6 +9,16 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+      jQuery(function($) {
+        $( "#datepicker" ).datepicker();
+      });
+    </script>
+  
   </head>
 
   <body>

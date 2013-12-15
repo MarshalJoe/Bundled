@@ -3,6 +3,7 @@ class CreateSubscriptions < ActiveRecord::Migration
     create_table :subscriptions do |t|
       t.string :name
       t.integer :fee
+      t.datetime :date
       t.boolean :monthly
       t.boolean :annually
 

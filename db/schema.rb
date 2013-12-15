@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20131125211327) do
   create_table "subscriptions", force: true do |t|
     t.string   "name"
     t.integer  "fee"
+    t.datetime "date"
     t.boolean  "monthly"
     t.boolean  "annually"
     t.datetime "created_at"

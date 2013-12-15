@@ -1,6 +1,12 @@
-<h1>Editing subscription</h1>
+
+<div class="row">
+	<div class="large-3 columns">
+	<h1><%= @subscription.name %></h1>
+	</div>
 
 <%= render 'form' %>
+
+</div>
 
 <%= link_to 'Show', @subscription %> |
 <%= link_to 'Back', subscriptions_path %>
