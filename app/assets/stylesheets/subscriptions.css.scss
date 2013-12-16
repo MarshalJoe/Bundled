@@ -2,15 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #edit {
+  body {
+  	background-color: gray;
+	}
+	
+	h1 {
+		font-size: 6em;
+	}
 
 
+	#title-wrapper {
+		text-align: center;
+		min-height: 100%;
+	}
 
+	.row {
+		margin-top: 25px;
+	}
 
+	.middle {
+		clear:right;
+	}
 
-
-
-
-
+	.radio-wrapper {
+		text-align: center;
+		margin-top: 50px; 
+	}
 
 
 

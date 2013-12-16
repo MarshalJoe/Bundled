@@ -11,30 +11,54 @@
     </div>
   <% end %>
 
-  <div class="large-6 large-offset-1 columns">
-    <br>
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :fee %><br>
-      <%= f.number_field :fee %>
+  <div class="row">
+    <div class="large-4 columns">
+      <div id="title-wrapper">
+          <% if @subscription.name != true %>
+            <h1><%= @subscription.name %></h1>
+            <% else %>
+          <% end %>
+        <div>
+          <%= f.submit "Update", :class => "button large round" %>
+        </div>
+
+        <div>
+          <%= link_to 'Show', @subscription %> |
+          <%= link_to 'Back', subscriptions_path %>
+        </div>
+
+      </div>
     </div>
 
-    <p>Date: <input type="text" id="datepicker"></p>
+    <div class="large-3 columns">
+      <div class="radio-wrapper">
+        <div class="field">
+          <%= f.label :monthly %><br>
+          <%= f.check_box :monthly %>
+        </div>
+        <div class="field">
+          <%= f.label :annually %><br>
+          <%= f.check_box :annually %>
+        </div>
+      </div>
+    </div>
 
-    <div class="field">
-      <%= f.label :monthly %><br>
-      <%= f.check_box :monthly %>
+    <div class="large-5 columns">
+      <br>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :fee %><br>
+        <%= f.number_field :fee %>
+      </div>
+  
+      <p>Date: <input type="text" id="datepicker"></p>
+  
     </div>
-    <div class="field">
-      <%= f.label :annually %><br>
-      <%= f.check_box :annually %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+
   </div>
 
 <% end %>
