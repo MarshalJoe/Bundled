@@ -22,8 +22,15 @@
   </head>
 
   <body id="<%= yield :body_id %>">
-
+    <div class="top-wrapper">
+      <ul class="side-nav">
+        <li><a href="#">View Calendar</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Edit All</a></li>
+      </ul>
+    </div>
     <%= yield %>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -1,13 +1,32 @@
 // Place all the styles related to the Subscriptions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.side-nav {
+	width: 200px;
+	float: left;
+	text-align: center;
+	line-height: 4em;
+	padding-left: 20px;
+	margin-top: 35px; 
+}
+
 #edit {
+
+	a:hover {
+		background-color: white;
+	}
+  
   body {
   	background-color: gray;
 	}
-	
+
 	h1 {
 		font-size: 6em;
+	}
+
+	.radio-wrapper {
+		text-align: center;
+		margin-top: 50px; 
 	}
 
 
@@ -16,19 +35,10 @@
 		min-height: 100%;
 	}
 
-	.row {
-		margin-top: 25px;
-	}
 
 	.middle {
 		clear:right;
 	}
-
-	.radio-wrapper {
-		text-align: center;
-		margin-top: 50px; 
-	}
-
 
 
 
