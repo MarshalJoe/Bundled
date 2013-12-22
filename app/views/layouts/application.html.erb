@@ -22,11 +22,15 @@
   </head>
 
   <body id="<%= yield :body_id %>">
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <div class="top-wrapper">
       <ul class="side-nav">
-        <li><a href="#">View Calendar</a></li>
-        <li><a href="#">Notifications</a></li>
-        <li><a href="#">Edit All</a></li>
+        <li><a class="side-link" href="#">View Calendar</a></li>
+        <li><a class="side-link" href="#">Notifications</a></li>
+        <li><a class="side-link" href="#">Edit All</a></li>
       </ul>
     </div>
     <%= yield %>
