@@ -7,4 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user = User.create(email: "joseph.charles.marshall@gmail.com")
-subcription = Subscription.create(name:"Hulu", fee:7, monthly:true, annually:false)
+subscription = Subscription.create(name:"Hulu", fee: 7, monthly: true, annually: false)
+user.subscription = subscription
