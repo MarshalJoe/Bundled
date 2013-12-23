@@ -1,36 +1,31 @@
-<h1>Bundled</h1>
+<div class="row">
+  <div class="large-8 large-offset-2 columns">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Fee</th>
-      <th>Date</th>
-      <th>Monthly</th>
-      <th>Annually</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @subscriptions.each do |subscription| %>
-      <tr>
-        <td><%= subscription.name %></td>
-        <td><%= subscription.fee %></td>
-        <td><%= subscription.date %></td>
-        <td><%= subscription.monthly %></td>
-        <td><%= subscription.annually %></td>
-        <td><%= link_to 'Show', subscription %></td>
-        <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
-        <td><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% @total << subscription.fee %>
+      <% end %>
+
+    <h2>Next Month: <%= @total.sum %></h2> 
+
+
+
+
+
+
+    <% @subscriptions.each do |subscription| %>
+        <div><%= subscription.name %></div>
+        <div><%= subscription.fee %></div>
+        <div><%= subscription.date %></div>
+        <div><%= subscription.monthly %></div>
+        <div><%= subscription.annually %></div>
+        <div><%= link_to 'Show', subscription %></div>
+        <div><%= link_to 'Edit', edit_subscription_path(subscription) %></div>
+        <div><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <% end %>
-  </tbody>
-  <%= link_to 'New Subscription', new_subscription_path %>
-</table>
+ 
+    <%= link_to 'New Subscription', new_subscription_path %>
+   <h2>Some Stuff</h2>
 
-<h2>Some Stuff</h2>
+  </div>
+</div>
 
-<br>

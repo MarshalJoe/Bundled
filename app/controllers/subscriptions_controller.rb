@@ -5,6 +5,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions.json
   def index
     @subscriptions = Subscription.all
+    @total = []
   end
 
   # GET /subscriptions/1
