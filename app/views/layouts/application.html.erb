@@ -30,13 +30,13 @@
     <p class="alert"><%= alert %></p>
   
   <div class="row linkbox">
-    <div class="large-2 columns">
+    <div class="large-3 columns">
       <div class="top-wrapper">
         <ul class="side-nav">
           <li><%= link_to 'Bundled', subscriptions_path, :class => "side-link-home"=%></li>
           <li><div><%= link_to '+ Subscription', new_subscription_path, :class => "side-link-add"%></div></li>
           <% @subscriptions.each do |subscription| %>
-          <li><%= link_to subscription.name, edit_subscription_path(subscription)%></li>
+          <li><%= link_to "#{subscription.name}", edit_subscription_path(subscription), :class => "sub-link" %></li>
           <% end %>
         </ul>
       </div>
@@ -44,18 +44,7 @@
 
     <%= yield %>
   </div>
-<!-- 
-   <% @subscriptions.each do |subscription| %>
-        <div><%= subscription.name %></div>
-        <div><%= subscription.fee %></div>
-        <div><%= subscription.date %></div>
-        <div><%= subscription.monthly %></div>
-        <div><%= subscription.annually %></div>
-        <div><%= link_to 'Show', subscription %></div>
-        <div><%= link_to 'Edit', edit_subscription_path(subscription) %></div>
-        <div><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-    <% end %> -->
-    
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

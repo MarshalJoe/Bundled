@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="row">
-    <div class="large-3 columns large-offset-1">
+    <div class="large-3 columns">
       <div id="title-wrapper">
           <% if @subscription.name != true %>
             <h1><%= @subscription.name %></h1>
@@ -45,6 +45,9 @@
 
     <div class="large-3 columns">
       <br>
+
+      <p>Date: <input type="text" id="datepicker"></p>
+
       <div class="field">
         <%= f.label :name %><br>
         <%= f.text_field :name %>
@@ -54,9 +57,7 @@
         <%= f.label :fee %><br>
         <%= f.number_field :fee %>
       </div>
-  
-      <p>Date: <input type="text" id="datepicker"></p>
-  
+    
     </div>
 
   </div>

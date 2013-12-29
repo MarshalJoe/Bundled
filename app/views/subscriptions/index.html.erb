@@ -1,12 +1,10 @@
 <% content_for(:body_id, "index") %>
 
-  <div class="large-8 columns large-offset-1">
-    <h1 class="paying">Your bundle is</h1>
+  <div class="large-8 columns">
+    <h1 class="paying">Your bundle comes to...</h1>
   </div>
 
-
-<div class="row">
-  <div class="large-4 columns large-offset-1">
+  <div class="large-4 columns">
 
     <% @subscriptions.each do |subscription| %>
       <% if subscription.monthly == true %>
@@ -27,14 +25,21 @@
       <% end %>
 
     <h3><span class="yearly"><%= @next_year_total.sum %></span>$/year</h3> 
-  </div>  
+  </div>
 
-  <div class="large-4 columns large-offset-1">
+  <div class="large-9 columns">
         <table class="subscription-list">
           <tr>
           <% @subscriptions.each do |subscription| %>
             
               <td><h2><%= subscription.name %></h2></td>
+              <td><h2><%= subscription.fee %></h2></td>
+                <% if subscription.monthly == true %>
+                  <% subscription_length  = "/month" %>
+                <% else %>
+                  <% subscription_length  = "/year" %>
+                <% end %>
+              <td><h2><%= subscription_length %></h2></td>
               <td>
                 <div class="delete_button"><%= link_to 'Delete', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></div>
               </td>
@@ -43,13 +48,6 @@
           <% end %>
         </table>
   </div>
-
-  <div class="row">
-    <div class="large-6 columns">
-    </div>
-  </div>
-
-</div>
 
     
 
