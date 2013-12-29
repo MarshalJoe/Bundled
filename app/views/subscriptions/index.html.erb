@@ -30,16 +30,19 @@
   <div class="large-9 columns">
         <table class="subscription-list">
           <tr>
+            <td><h4><%= link_to "New Subscription", new_subscription_path, id: "new_link", remote: true %></h4></td>
+          </tr>
+          <tr>
           <% @subscriptions.each do |subscription| %>
             
-              <td><h2><%= subscription.name %></h2></td>
-              <td><h2>$<%= subscription.fee %></h2></td>
+              <td><h3><%= subscription.name %></h3></td>
+              <td><h3>$<%= subscription.fee %></h3></td>
                 <% if subscription.monthly == true %>
                   <% subscription_length  = "/month" %>
                 <% else %>
                   <% subscription_length  = "/year" %>
                 <% end %>
-              <td><h2><%= subscription_length %></h2></td>
+              <td><h3><%= subscription_length %></h3></td>
               <td>
                 <div class="delete_button"><%= link_to 'Delete', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></div>
               </td>

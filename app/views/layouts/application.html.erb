@@ -29,13 +29,17 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   
-  <div class="row linkbox">
+  <div class="row mainboxbox">
     <div class="large-3 columns">
       <div class="top-wrapper">
         <ul class="side-nav">
+          
           <li><%= link_to 'Bundled', subscriptions_path, :class => "side-link-home"=%></li>
+          
           <li><div><%= link_to '+ Subscription', new_subscription_path, :class => "side-link-add"%></div></li>
+          
           <% @subscriptions.each do |subscription| %>
+          
           <li><%= link_to "#{subscription.name}", edit_subscription_path(subscription), :class => "sub-link" %></li>
           <% end %>
         </ul>
@@ -44,7 +48,7 @@
 
     <%= yield %>
   </div>
-
+    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

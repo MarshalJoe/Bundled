@@ -1,4 +1,5 @@
-<%= form_for(@subscription) do |f| %>
+<%= form_for(@subscription, remote: true) do |f| %>
+  
   <% if @subscription.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
@@ -11,7 +12,16 @@
     </div>
   <% end %>
 
-  <div class="row">
+<tr>
+  <td>
+    <%= f.label :name %><%= f.text_field :name %>
+  </td>
+  <td>
+    <%= f.label :fee %><%= f.number_field :fee %>
+  </td>
+</tr>
+
+  <!-- <div class="row">
     <div class="large-3 columns">
       <div id="title-wrapper">
           <% if @subscription.name != true %>
@@ -60,6 +70,6 @@
     
     </div>
 
-  </div>
+  </div> -->
 
 <% end %>

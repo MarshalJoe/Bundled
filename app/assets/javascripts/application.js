@@ -14,11 +14,16 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require_tree .
+//= require_tree
+//= require_self
 
-$(function(){ $(document).foundation(); });
+$(document).foundation();
 
 $(document).ready(function() {
+
+$('#new_link').on("click", function (event) {
+	console.log("I'm working");
+});
 
 $(function() {
     $( "#datepicker" ).datepicker();
