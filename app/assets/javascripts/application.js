@@ -22,6 +22,7 @@ $(document).foundation();
 $(document).ready(function() {
 
 $('#new_link').on("click", function (event) {
+	$("#new_link").hide()
 	console.log("I'm working");
 });
 
