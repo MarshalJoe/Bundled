@@ -33,7 +33,7 @@
           <% @subscriptions.each do |subscription| %>
             
               <td><h2><%= subscription.name %></h2></td>
-              <td><h2><%= subscription.fee %></h2></td>
+              <td><h2>$<%= subscription.fee %></h2></td>
                 <% if subscription.monthly == true %>
                   <% subscription_length  = "/month" %>
                 <% else %>
