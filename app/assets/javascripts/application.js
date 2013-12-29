@@ -18,19 +18,23 @@
 
 $(function(){ $(document).foundation(); });
 
+$(document).ready(function() {
+
 $(function() {
     $( "#datepicker" ).datepicker();
   });
 
 var colors = ["blue", "aquamarine", "pink", "yellow", "green", "red", 'orange', "greenyellow"];
 
-$('li').mouseenter(function(){
+$('li').mouseover(function(){
 	 var color = colors[Math.floor(Math.random()*colors.length)];
    $('a', this).css('background-color', color);
    $('a', this).css('color', "white");
  });
 
-$('li').mouseleave(function(){
+$('li').mouseout(function(){
    $('a', this).css('background-color','white');
    $('a', this).css('color','black');
  });
+
+});

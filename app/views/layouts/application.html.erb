@@ -12,6 +12,7 @@
     
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
 
     <script type="text/javascript">
       jQuery(function($) {
@@ -32,8 +33,8 @@
     <div class="large-2 columns">
       <div class="top-wrapper">
         <ul class="side-nav">
-          <li><%= link_to 'Home', subscriptions_path, :class => "side-link-home"=%></li>
-          <li><div><%= link_to 'Add Subscription', new_subscription_path, :class => "side-link-add"%></div></li>
+          <li><%= link_to 'Bundled', subscriptions_path, :class => "side-link-home"=%></li>
+          <li><div><%= link_to '+ Subscription', new_subscription_path, :class => "side-link-add"%></div></li>
           <% @subscriptions.each do |subscription| %>
           <li><%= link_to subscription.name, edit_subscription_path(subscription)%></li>
           <% end %>

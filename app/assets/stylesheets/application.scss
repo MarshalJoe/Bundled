@@ -22,10 +22,7 @@
 
  .paying {
  	font-size: 2.7em;
- }
-
- .paying, .monthly, .yearly {
- 	line-height: 1.75em;
+ 	margin-bottom: 30px;
  }
 
  .side-nav {
@@ -39,12 +36,11 @@
 
 .row.linkbox {
 	margin-left: 0px;
+	margin-right: 0px;
 }
 
-//different colors for side navbar buttons
-
-.side-link-add:hover {
-	color: white;
-	background-color: purple;
+.monthly, .yearly, {
+		font-family: 'Nixie One', cursive;
+		margin-top: 20px;
 }
 
