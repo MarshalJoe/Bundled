@@ -25,16 +25,35 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <div class="top-wrapper">
-      <ul class="side-nav">
-        <li><a class="side-link" href="#">View Calendar</a></li>
-        <li><a class="side-link" href="#">Notifications</a></li>
-        <li><a class="side-link" href="#">Edit All</a></li>
-      </ul>
+  
+  <div class="row linkbox">
+    <div class="large-2 columns">
+      <div class="top-wrapper">
+        <ul class="side-nav">
+          <% @subscriptions.each do |subscription| %>
+          <li><a class="side-link-<%=subscription.id%>" href="#"><%= subscription.name %></a></li>
+          <% end %>
+          <li>Show Mailer</li>
+        </ul>
+      </div>
     </div>
-    <%= yield %>
 
+    <%= yield %>
+  </div>
+
+<!--   <% @subscriptions.each do |subscription| %>
+        <div><%= subscription.name %></div>
+        <div><%= subscription.fee %></div>
+        <div><%= subscription.date %></div>
+        <div><%= subscription.monthly %></div>
+        <div><%= subscription.annually %></div>
+        <div><%= link_to 'Show', subscription %></div>
+        <div><%= link_to 'Edit', edit_subscription_path(subscription) %></div>
+        <div><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <% end %>
+ -->
+  
+    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

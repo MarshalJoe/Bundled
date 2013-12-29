@@ -1,18 +1,43 @@
+<% content_for(:body_id, "index") %>
+
+  <div class="large-6 columns large-offset-1">
+    <h1 class="paying">You're Paying</h1>
+  </div>
+
+
 <div class="row">
-  <div class="large-8 large-offset-2 columns">
+  <div class="large-4 columns large-offset-1">
 
     <% @subscriptions.each do |subscription| %>
-      <% @total << subscription.fee %>
+      <% if subscription.monthly == true %>
+        <% @next_month_total << subscription.fee %>
+        <% @next_year_total << subscription.fee * 12 %>
+      <% else %>
+        <% @next_year_total << subscription.fee%>
+      <% end %>
+    <% end %>
+
+    <h3><span class="monthly"><%= @next_month_total.sum %></span> $ /month</h3>
+
+  </div>
+  
+  <div class="large-4 columns">
+    <% @subscriptions.each do |subscription| %>
+      <% @next_month_total << subscription.fee %>
       <% end %>
 
-    <h2>Next Month: <%= @total.sum %></h2> 
+    <h3><span class="yearly"><%= @next_year_total.sum %></span> $ /year</h3> 
+  </div>  
+</div>
+
+<div class="row">
+  <div class="large-6 columns large-offset-3">
+  </div>
+
+</div>
 
 
-
-
-
-
-    <% @subscriptions.each do |subscription| %>
+<!--     <% @subscriptions.each do |subscription| %>
         <div><%= subscription.name %></div>
         <div><%= subscription.fee %></div>
         <div><%= subscription.date %></div>
@@ -24,8 +49,7 @@
     <% end %>
  
     <%= link_to 'New Subscription', new_subscription_path %>
-   <h2>Some Stuff</h2>
+   <h2>Some Stuff</h2> -->
 
-  </div>
-</div>
+
 

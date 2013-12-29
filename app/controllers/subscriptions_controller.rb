@@ -5,7 +5,8 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions.json
   def index
     @subscriptions = Subscription.all
-    @total = []
+    @next_month_total = []
+    @next_year_total = []
   end
 
   # GET /subscriptions/1
