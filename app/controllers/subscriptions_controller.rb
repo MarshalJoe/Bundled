@@ -18,15 +18,19 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/new
   def new
     @subscription = Subscription.new
+    @subscriptions = Subscription.all
   end
 
   # GET /subscriptions/1/edit
   def edit
+    @subscriptions = Subscription.all
+
   end
 
   # POST /subscriptions
   # POST /subscriptions.json
   def create
+    @subscriptions = Subscription.all
     @subscription = Subscription.new(subscription_params)
 
     respond_to do |format|
