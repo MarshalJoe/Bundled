@@ -31,21 +31,24 @@
 </div>
 
 <div class="row">
-  <div class="large-6 columns large-offset-3">
+  <div class="large-3 large-offset-3 columns">
+        <table class="subscription-list">
+          <tr>
+          <% @subscriptions.each do |subscription| %>
+            
+              <td><h2><%= subscription.name %></h2><td>
+            
+              <td>
+                <div class="delete_button"><%= link_to 'Delete', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+              </td>
+          </tr>
+          <% end %>
+        </table>
   </div>
 
 </div>
 
-    <% @subscriptions.each do |subscription| %>
-        <div><%= subscription.name %></div>
-        <div><%= subscription.fee %></div>
-        <div><%= subscription.date %></div>
-        <div><%= subscription.monthly %></div>
-        <div><%= subscription.annually %></div>
-        <div><%= link_to 'Show', subscription %></div>
-        <div><%= link_to 'Edit', edit_subscription_path(subscription) %></div>
-        <div><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-    <% end %>
+    
 
 
 

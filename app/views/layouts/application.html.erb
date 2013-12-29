@@ -30,7 +30,8 @@
     <div class="large-2 columns">
       <div class="top-wrapper">
         <ul class="side-nav">
-          <li><div class="side-link-add"><%= link_to 'New Subscription', new_subscription_path, :class => "side-link-add"%></div></li>
+          <li><%= link_to 'Home', subscriptions_path, :class => "side-link-home"=%></li>
+          <li><div><%= link_to 'Add Subscription', new_subscription_path, :class => "side-link-add"%></div></li>
           <% @subscriptions.each do |subscription| %>
           <li><a><%= link_to subscription.name, edit_subscription_path(subscription), :class => "side-link-#{subscription.id}" %></a></li>
           <% end %>
